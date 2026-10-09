@@ -34,11 +34,15 @@ The dataset includes order and delivery-person identifiers, driver age and ratin
 
 ## 5. Data Preprocessing
 
-`src/data_preprocessing.py` reads the original CSV and writes `data/cleaned_logistics_data.csv`. It normalizes column names, parses dates and times safely, retains rows with missing values, fills missing categorical labels with `Unknown`, and leaves numeric missing values available for later handling.
+`src/data_preprocessing.py` reads the original CSV and, by default, writes the separate Week 2 output `data/week2_cleaned_logistics_data.csv` and `reports/week2_data_quality_summary.json`. It preserves the Week 1 cleaned file, retains rows with missing values, fills missing categorical labels with `Unknown`, and leaves numeric missing values available for later handling.
 
 Coordinate pairs are validated before distance calculation. Zero, placeholder-like, and out-of-region coordinates are flagged and excluded from distance calculations. The preprocessing run retained all 45,584 rows and produced 41,513 valid approximate distance calculations; 4,071 rows were flagged for invalid coordinates.
 
 `approx_delivery_distance_km` is a great-circle, straight-line approximation between restaurant and delivery coordinates. It is **not road distance, route length, or actual travel time**.
+
+### Week 2 data quality audit
+
+The Week 2 audit is documented in [`notebooks/05_week2_data_quality_audit.ipynb`](notebooks/05_week2_data_quality_audit.ipynb), with source limitations recorded in [`data/DATASET_SOURCE.md`](data/DATASET_SOURCE.md). The preprocessing retains source rows and raw values, preserves missing numeric measurements, labels unknown categories consistently, and flags parse failures, duplicates, coordinate concerns, and IQR outliers rather than silently repairing or deleting them. India-region bounds, the 1-5 rating range, and overnight pickup-time handling are assumptions that remain to be verified. The candidate Kaggle listing is not verified provenance for the local file.
 
 ## 6. Exploratory Data Analysis
 
@@ -128,17 +132,22 @@ These findings are descriptive or illustrative; they should not be interpreted a
 logistics-route-optimization/
 ├── data/
 │   ├── Zomato Dataset.csv
-│   └── cleaned_logistics_data.csv
+│   ├── cleaned_logistics_data.csv
+│   ├── week2_cleaned_logistics_data.csv
+│   └── DATASET_SOURCE.md
 ├── notebooks/
 │   ├── 01_data_audit_and_eda.ipynb
 │   ├── 02_delivery_time_regression.ipynb
 │   ├── 03_delivery_clustering.ipynb
-│   └── 04_optimization_demo.ipynb
+│   ├── 04_optimization_demo.ipynb
+│   └── 05_week2_data_quality_audit.ipynb
 ├── src/
 │   ├── data_preprocessing.py
 │   ├── modeling.py
 │   ├── clustering.py
 │   └── optimization_demo.py
+├── reports/
+│   └── week2_data_quality_summary.json
 ├── visualizations/
 └── README.md
 ```

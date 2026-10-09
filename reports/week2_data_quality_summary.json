@@ -1,0 +1,834 @@
+{
+  "source_documentation": {
+    "local_file": "Zomato Dataset.csv",
+    "candidate_public_listing": "https://www.kaggle.com/datasets/saurabhbadole/zomato-delivery-operations-analytics-dataset",
+    "verification_status": "Candidate listing only; the exact identity of this local file and its original provenance have not been verified.",
+    "license_collection_method_publication_date": "Not asserted; confirm from the original publisher before documenting."
+  },
+  "source": {
+    "rows": 45584,
+    "columns": 20,
+    "dtypes": {
+      "id": "str",
+      "delivery_person_id": "str",
+      "delivery_person_age": "float64",
+      "delivery_person_ratings": "float64",
+      "restaurant_latitude": "float64",
+      "restaurant_longitude": "float64",
+      "delivery_location_latitude": "float64",
+      "delivery_location_longitude": "float64",
+      "order_date": "str",
+      "time_orderd": "str",
+      "time_order_picked": "str",
+      "weather_conditions": "str",
+      "road_traffic_density": "str",
+      "vehicle_condition": "int64",
+      "type_of_order": "str",
+      "type_of_vehicle": "str",
+      "multiple_deliveries": "float64",
+      "festival": "str",
+      "city": "str",
+      "time_taken_min": "int64"
+    },
+    "missing_by_column": {
+      "delivery_person_age": 1854,
+      "delivery_person_ratings": 1908,
+      "time_orderd": 1731,
+      "weather_conditions": 616,
+      "road_traffic_density": 601,
+      "multiple_deliveries": 993,
+      "festival": 228,
+      "city": 1200
+    },
+    "numeric_ranges": {
+      "delivery_person_age": {
+        "dtype": "float64",
+        "min": 15.0,
+        "max": 50.0,
+        "non_numeric_or_nonfinite_count": 0
+      },
+      "delivery_person_ratings": {
+        "dtype": "float64",
+        "min": 1.0,
+        "max": 6.0,
+        "non_numeric_or_nonfinite_count": 0
+      },
+      "restaurant_latitude": {
+        "dtype": "float64",
+        "min": -30.905562,
+        "max": 30.914057,
+        "non_numeric_or_nonfinite_count": 0
+      },
+      "restaurant_longitude": {
+        "dtype": "float64",
+        "min": -88.366217,
+        "max": 88.433452,
+        "non_numeric_or_nonfinite_count": 0
+      },
+      "delivery_location_latitude": {
+        "dtype": "float64",
+        "min": 0.01,
+        "max": 31.054057,
+        "non_numeric_or_nonfinite_count": 0
+      },
+      "delivery_location_longitude": {
+        "dtype": "float64",
+        "min": 0.01,
+        "max": 88.563452,
+        "non_numeric_or_nonfinite_count": 0
+      },
+      "vehicle_condition": {
+        "dtype": "int64",
+        "min": 0.0,
+        "max": 3.0,
+        "non_numeric_or_nonfinite_count": 0
+      },
+      "multiple_deliveries": {
+        "dtype": "float64",
+        "min": 0.0,
+        "max": 3.0,
+        "non_numeric_or_nonfinite_count": 0
+      },
+      "time_taken_min": {
+        "dtype": "int64",
+        "min": 10.0,
+        "max": 54.0,
+        "non_numeric_or_nonfinite_count": 0
+      }
+    },
+    "categories": {
+      "weather_conditions": {
+        "unique_count_including_missing": 7,
+        "value_counts": {
+          "Fog": 7653,
+          "Stormy": 7584,
+          "Cloudy": 7533,
+          "Sandstorms": 7494,
+          "Windy": 7422,
+          "Sunny": 7282,
+          "nan": 616
+        },
+        "unexpected_values_preserved": []
+      },
+      "road_traffic_density": {
+        "unique_count_including_missing": 5,
+        "value_counts": {
+          "Low": 15476,
+          "Jam": 14139,
+          "Medium": 10945,
+          "High": 4423,
+          "nan": 601
+        },
+        "unexpected_values_preserved": []
+      },
+      "type_of_order": {
+        "unique_count_including_missing": 4,
+        "value_counts": {
+          "Snack": 11530,
+          "Meal": 11456,
+          "Drinks": 11321,
+          "Buffet": 11277
+        },
+        "unexpected_values_preserved": []
+      },
+      "type_of_vehicle": {
+        "unique_count_including_missing": 4,
+        "value_counts": {
+          "motorcycle": 26429,
+          "scooter": 15273,
+          "electric_scooter": 3814,
+          "bicycle": 68
+        },
+        "unexpected_values_preserved": []
+      },
+      "festival": {
+        "unique_count_including_missing": 3,
+        "value_counts": {
+          "No": 44460,
+          "Yes": 896,
+          "nan": 228
+        },
+        "unexpected_values_preserved": []
+      },
+      "city": {
+        "unique_count_including_missing": 4,
+        "value_counts": {
+          "Metropolitian": 34087,
+          "Urban": 10133,
+          "nan": 1200,
+          "Semi-Urban": 164
+        },
+        "unexpected_values_preserved": []
+      }
+    }
+  },
+  "processed": {
+    "rows": 45584,
+    "columns": 59,
+    "dtypes": {
+      "id": "str",
+      "delivery_person_id": "str",
+      "delivery_person_age": "float64",
+      "delivery_person_ratings": "float64",
+      "restaurant_latitude": "float64",
+      "restaurant_longitude": "float64",
+      "delivery_location_latitude": "float64",
+      "delivery_location_longitude": "float64",
+      "order_date": "str",
+      "time_orderd": "str",
+      "time_order_picked": "str",
+      "weather_conditions": "category",
+      "road_traffic_density": "category",
+      "vehicle_condition": "Int64",
+      "type_of_order": "category",
+      "type_of_vehicle": "category",
+      "multiple_deliveries": "float64",
+      "festival": "category",
+      "city": "category",
+      "time_taken_min": "int64",
+      "order_date_parsed": "datetime64[us]",
+      "order_date_parse_status": "str",
+      "order_time_minutes": "float64",
+      "order_time_minutes_parse_status": "str",
+      "pickup_time_minutes": "float64",
+      "pickup_time_minutes_parse_status": "str",
+      "pickup_crosses_midnight_assumed": "boolean",
+      "order_to_pickup_over_12h_flag": "boolean",
+      "order_to_pickup_minutes": "float64",
+      "order_hour": "Int64",
+      "pickup_hour": "Int64",
+      "restaurant_coordinates_finite": "bool",
+      "restaurant_coordinates_global_range_valid": "bool",
+      "restaurant_zero_coordinate_flag": "bool",
+      "restaurant_near_zero_coordinate_flag": "bool",
+      "restaurant_outside_india_region_flag": "bool",
+      "restaurant_coordinates_status": "string",
+      "delivery_coordinates_finite": "bool",
+      "delivery_coordinates_global_range_valid": "bool",
+      "delivery_zero_coordinate_flag": "bool",
+      "delivery_near_zero_coordinate_flag": "bool",
+      "delivery_outside_india_region_flag": "bool",
+      "delivery_coordinates_status": "string",
+      "coordinates_globally_valid": "bool",
+      "coordinates_in_expected_india_region": "bool",
+      "coordinates_valid": "bool",
+      "invalid_coordinate_reason": "str",
+      "approx_delivery_distance_km": "float64",
+      "time_taken_min_nonpositive_flag": "boolean",
+      "order_day": "Int64",
+      "day_of_week": "category",
+      "has_multiple_deliveries": "boolean",
+      "time_taken_min_iqr_outlier_flag": "boolean",
+      "delivery_person_ratings_iqr_outlier_flag": "boolean",
+      "delivery_person_age_iqr_outlier_flag": "boolean",
+      "multiple_deliveries_iqr_outlier_flag": "boolean",
+      "delivery_person_ratings_outside_tentative_1_5_flag": "boolean",
+      "exact_duplicate_record_flag": "bool",
+      "duplicate_id_flag": "bool"
+    },
+    "missing_by_column": {
+      "delivery_person_age": 1854,
+      "delivery_person_ratings": 1908,
+      "time_orderd": 1731,
+      "multiple_deliveries": 993,
+      "order_time_minutes": 2161,
+      "pickup_time_minutes": 1320,
+      "order_to_pickup_minutes": 2992,
+      "order_hour": 2161,
+      "pickup_hour": 1320,
+      "approx_delivery_distance_km": 4071,
+      "delivery_person_ratings_iqr_outlier_flag": 1908,
+      "delivery_person_age_iqr_outlier_flag": 1854,
+      "multiple_deliveries_iqr_outlier_flag": 993,
+      "delivery_person_ratings_outside_tentative_1_5_flag": 1908
+    },
+    "numeric_ranges": {
+      "delivery_person_age": {
+        "dtype": "float64",
+        "min": 15.0,
+        "max": 50.0,
+        "non_numeric_or_nonfinite_count": 0
+      },
+      "delivery_person_ratings": {
+        "dtype": "float64",
+        "min": 1.0,
+        "max": 6.0,
+        "non_numeric_or_nonfinite_count": 0
+      },
+      "restaurant_latitude": {
+        "dtype": "float64",
+        "min": -30.905562,
+        "max": 30.914057,
+        "non_numeric_or_nonfinite_count": 0
+      },
+      "restaurant_longitude": {
+        "dtype": "float64",
+        "min": -88.366217,
+        "max": 88.433452,
+        "non_numeric_or_nonfinite_count": 0
+      },
+      "delivery_location_latitude": {
+        "dtype": "float64",
+        "min": 0.01,
+        "max": 31.054057,
+        "non_numeric_or_nonfinite_count": 0
+      },
+      "delivery_location_longitude": {
+        "dtype": "float64",
+        "min": 0.01,
+        "max": 88.563452,
+        "non_numeric_or_nonfinite_count": 0
+      },
+      "vehicle_condition": {
+        "dtype": "Int64",
+        "min": 0.0,
+        "max": 3.0,
+        "non_numeric_or_nonfinite_count": 0
+      },
+      "multiple_deliveries": {
+        "dtype": "float64",
+        "min": 0.0,
+        "max": 3.0,
+        "non_numeric_or_nonfinite_count": 0
+      },
+      "time_taken_min": {
+        "dtype": "int64",
+        "min": 10.0,
+        "max": 54.0,
+        "non_numeric_or_nonfinite_count": 0
+      },
+      "order_time_minutes": {
+        "dtype": "float64",
+        "min": 490.0,
+        "max": 1435.0,
+        "non_numeric_or_nonfinite_count": 0
+      },
+      "pickup_time_minutes": {
+        "dtype": "float64",
+        "min": 495.0,
+        "max": 1435.0,
+        "non_numeric_or_nonfinite_count": 0
+      },
+      "pickup_crosses_midnight_assumed": {
+        "dtype": "boolean",
+        "min": 0.0,
+        "max": 0.0,
+        "non_numeric_or_nonfinite_count": 0
+      },
+      "order_to_pickup_over_12h_flag": {
+        "dtype": "boolean",
+        "min": 0.0,
+        "max": 0.0,
+        "non_numeric_or_nonfinite_count": 0
+      },
+      "order_to_pickup_minutes": {
+        "dtype": "float64",
+        "min": 4.99999951999996,
+        "max": 15.00000048000004,
+        "non_numeric_or_nonfinite_count": 0
+      },
+      "order_hour": {
+        "dtype": "Int64",
+        "min": 8.0,
+        "max": 23.0,
+        "non_numeric_or_nonfinite_count": 0
+      },
+      "pickup_hour": {
+        "dtype": "Int64",
+        "min": 8.0,
+        "max": 23.0,
+        "non_numeric_or_nonfinite_count": 0
+      },
+      "restaurant_coordinates_finite": {
+        "dtype": "bool",
+        "min": 1.0,
+        "max": 1.0,
+        "non_numeric_or_nonfinite_count": 0
+      },
+      "restaurant_coordinates_global_range_valid": {
+        "dtype": "bool",
+        "min": 1.0,
+        "max": 1.0,
+        "non_numeric_or_nonfinite_count": 0
+      },
+      "restaurant_zero_coordinate_flag": {
+        "dtype": "bool",
+        "min": 0.0,
+        "max": 1.0,
+        "non_numeric_or_nonfinite_count": 0
+      },
+      "restaurant_near_zero_coordinate_flag": {
+        "dtype": "bool",
+        "min": 0.0,
+        "max": 1.0,
+        "non_numeric_or_nonfinite_count": 0
+      },
+      "restaurant_outside_india_region_flag": {
+        "dtype": "bool",
+        "min": 0.0,
+        "max": 1.0,
+        "non_numeric_or_nonfinite_count": 0
+      },
+      "delivery_coordinates_finite": {
+        "dtype": "bool",
+        "min": 1.0,
+        "max": 1.0,
+        "non_numeric_or_nonfinite_count": 0
+      },
+      "delivery_coordinates_global_range_valid": {
+        "dtype": "bool",
+        "min": 1.0,
+        "max": 1.0,
+        "non_numeric_or_nonfinite_count": 0
+      },
+      "delivery_zero_coordinate_flag": {
+        "dtype": "bool",
+        "min": 0.0,
+        "max": 0.0,
+        "non_numeric_or_nonfinite_count": 0
+      },
+      "delivery_near_zero_coordinate_flag": {
+        "dtype": "bool",
+        "min": 0.0,
+        "max": 1.0,
+        "non_numeric_or_nonfinite_count": 0
+      },
+      "delivery_outside_india_region_flag": {
+        "dtype": "bool",
+        "min": 0.0,
+        "max": 1.0,
+        "non_numeric_or_nonfinite_count": 0
+      },
+      "coordinates_globally_valid": {
+        "dtype": "bool",
+        "min": 1.0,
+        "max": 1.0,
+        "non_numeric_or_nonfinite_count": 0
+      },
+      "coordinates_in_expected_india_region": {
+        "dtype": "bool",
+        "min": 0.0,
+        "max": 1.0,
+        "non_numeric_or_nonfinite_count": 0
+      },
+      "coordinates_valid": {
+        "dtype": "bool",
+        "min": 0.0,
+        "max": 1.0,
+        "non_numeric_or_nonfinite_count": 0
+      },
+      "approx_delivery_distance_km": {
+        "dtype": "float64",
+        "min": 1.4650694288682353,
+        "max": 20.96951834437969,
+        "non_numeric_or_nonfinite_count": 0
+      },
+      "time_taken_min_nonpositive_flag": {
+        "dtype": "boolean",
+        "min": 0.0,
+        "max": 0.0,
+        "non_numeric_or_nonfinite_count": 0
+      },
+      "order_day": {
+        "dtype": "Int64",
+        "min": 1.0,
+        "max": 31.0,
+        "non_numeric_or_nonfinite_count": 0
+      },
+      "has_multiple_deliveries": {
+        "dtype": "boolean",
+        "min": 0.0,
+        "max": 1.0,
+        "non_numeric_or_nonfinite_count": 0
+      },
+      "time_taken_min_iqr_outlier_flag": {
+        "dtype": "boolean",
+        "min": 0.0,
+        "max": 1.0,
+        "non_numeric_or_nonfinite_count": 0
+      },
+      "delivery_person_ratings_iqr_outlier_flag": {
+        "dtype": "boolean",
+        "min": 0.0,
+        "max": 1.0,
+        "non_numeric_or_nonfinite_count": 0
+      },
+      "delivery_person_age_iqr_outlier_flag": {
+        "dtype": "boolean",
+        "min": 0.0,
+        "max": 0.0,
+        "non_numeric_or_nonfinite_count": 0
+      },
+      "multiple_deliveries_iqr_outlier_flag": {
+        "dtype": "boolean",
+        "min": 0.0,
+        "max": 1.0,
+        "non_numeric_or_nonfinite_count": 0
+      },
+      "delivery_person_ratings_outside_tentative_1_5_flag": {
+        "dtype": "boolean",
+        "min": 0.0,
+        "max": 1.0,
+        "non_numeric_or_nonfinite_count": 0
+      },
+      "exact_duplicate_record_flag": {
+        "dtype": "bool",
+        "min": 0.0,
+        "max": 0.0,
+        "non_numeric_or_nonfinite_count": 0
+      },
+      "duplicate_id_flag": {
+        "dtype": "bool",
+        "min": 0.0,
+        "max": 0.0,
+        "non_numeric_or_nonfinite_count": 0
+      }
+    },
+    "categories": {
+      "weather_conditions": {
+        "unique_count_including_missing": 7,
+        "value_counts": {
+          "Fog": 7653,
+          "Stormy": 7584,
+          "Cloudy": 7533,
+          "Sandstorms": 7494,
+          "Windy": 7422,
+          "Sunny": 7282,
+          "Unknown": 616
+        },
+        "unexpected_values_preserved": []
+      },
+      "road_traffic_density": {
+        "unique_count_including_missing": 5,
+        "value_counts": {
+          "Low": 15476,
+          "Jam": 14139,
+          "Medium": 10945,
+          "High": 4423,
+          "Unknown": 601
+        },
+        "unexpected_values_preserved": []
+      },
+      "type_of_order": {
+        "unique_count_including_missing": 4,
+        "value_counts": {
+          "Snack": 11530,
+          "Meal": 11456,
+          "Drinks": 11321,
+          "Buffet": 11277
+        },
+        "unexpected_values_preserved": []
+      },
+      "type_of_vehicle": {
+        "unique_count_including_missing": 4,
+        "value_counts": {
+          "motorcycle": 26429,
+          "scooter": 15273,
+          "electric_scooter": 3814,
+          "bicycle": 68
+        },
+        "unexpected_values_preserved": []
+      },
+      "festival": {
+        "unique_count_including_missing": 3,
+        "value_counts": {
+          "No": 44460,
+          "Yes": 896,
+          "Unknown": 228
+        },
+        "unexpected_values_preserved": []
+      },
+      "city": {
+        "unique_count_including_missing": 4,
+        "value_counts": {
+          "Metropolitian": 34087,
+          "Urban": 10133,
+          "Unknown": 1200,
+          "Semi-Urban": 164
+        },
+        "unexpected_values_preserved": []
+      }
+    }
+  },
+  "duplicates": {
+    "exact_duplicate_excess_count": 0,
+    "exact_duplicate_participating_rows": 0,
+    "duplicate_id_excess_count": 0,
+    "duplicate_id_participating_rows": 0,
+    "policy": "Flag only; do not drop records without a documented resolution rule."
+  },
+  "date_parsing": {
+    "format_assumption": "%d-%m-%Y based on observed source strings",
+    "source_missing_count": 0,
+    "parse_failure_count": 0,
+    "parsed_missing_count": 0,
+    "parsed_success_count": 45584,
+    "parsed_min": "2022-02-11",
+    "parsed_max": "2022-04-06",
+    "failure_examples": []
+  },
+  "time_parsing": {
+    "time_orderd": {
+      "source_missing_count": 1731,
+      "parse_failure_count": 430,
+      "parsed_missing_count": 2161,
+      "parsed_success_count": 43423,
+      "failure_examples": [
+        {
+          "source_row_index": 116,
+          "id": "0xbd03",
+          "time_orderd": "1"
+        },
+        {
+          "source_row_index": 599,
+          "id": "0xd152",
+          "time_orderd": "1"
+        },
+        {
+          "source_row_index": 696,
+          "id": "0x500f",
+          "time_orderd": "1"
+        },
+        {
+          "source_row_index": 825,
+          "id": "0x577c",
+          "time_orderd": "1"
+        },
+        {
+          "source_row_index": 886,
+          "id": "0xd1b8",
+          "time_orderd": "1"
+        }
+      ]
+    },
+    "time_order_picked": {
+      "source_missing_count": 0,
+      "parse_failure_count": 1320,
+      "parsed_missing_count": 1320,
+      "parsed_success_count": 44264,
+      "failure_examples": [
+        {
+          "source_row_index": 66,
+          "id": "0x4b7f",
+          "time_order_picked": "24:05:00"
+        },
+        {
+          "source_row_index": 92,
+          "id": "0x3185",
+          "time_order_picked": "24:10:00"
+        },
+        {
+          "source_row_index": 116,
+          "id": "0xbd03",
+          "time_order_picked": "24:15:00"
+        },
+        {
+          "source_row_index": 155,
+          "id": "0x51e4",
+          "time_order_picked": "1"
+        },
+        {
+          "source_row_index": 157,
+          "id": "0x1dac",
+          "time_order_picked": "1"
+        }
+      ]
+    },
+    "assumptions": {
+      "decimal_strings": "Values from 0 inclusive to 1 exclusive are treated as fractions of a day.",
+      "value_1": "Not interpreted as midnight; reported as a parse failure.",
+      "24_hour_clock": "24:xx values are not normalized without verified source convention.",
+      "overnight_interval": "Negative pickup-minus-order clock differences are rolled forward by one day as an assumption; intervals over 12 hours are set missing and flagged."
+    }
+  },
+  "coordinates": {
+    "restaurant_status_counts": {
+      "valid": 41513,
+      "zero_coordinate": 3640,
+      "outside_expected_india_region": 431
+    },
+    "delivery_status_counts": {
+      "valid": 41944,
+      "outside_expected_india_region": 3640
+    },
+    "globally_valid_pair_rows": 45584,
+    "within_expected_india_region_rows": 41513,
+    "zero_coordinate_rows": 3640,
+    "near_zero_coordinate_rows": 3640,
+    "valid_for_distance_rows": 41513,
+    "distance_not_calculated_rows": 4071
+  },
+  "outliers": {
+    "time_taken_min": {
+      "valid_count": 45584,
+      "q1": 19.0,
+      "q3": 32.0,
+      "lower_fence": -0.5,
+      "upper_fence": 51.5,
+      "outlier_count": 270,
+      "outlier_percent": 0.5923130923130923,
+      "examples": [
+        {
+          "source_row_index": 34,
+          "id": "0xb796",
+          "time_taken_min": 52
+        },
+        {
+          "source_row_index": 179,
+          "id": "0x4b5b",
+          "time_taken_min": 54
+        },
+        {
+          "source_row_index": 257,
+          "id": "0xd92f",
+          "time_taken_min": 53
+        },
+        {
+          "source_row_index": 632,
+          "id": "0xc2ba",
+          "time_taken_min": 54
+        },
+        {
+          "source_row_index": 713,
+          "id": "0x836d",
+          "time_taken_min": 53
+        }
+      ]
+    },
+    "delivery_person_ratings": {
+      "valid_count": 43676,
+      "q1": 4.5,
+      "q3": 4.9,
+      "lower_fence": 3.8999999999999995,
+      "upper_fence": 5.500000000000001,
+      "outlier_count": 1223,
+      "outlier_percent": 2.800164850261013,
+      "examples": [
+        {
+          "source_row_index": 24,
+          "id": "0x2876",
+          "delivery_person_ratings": 3.5
+        },
+        {
+          "source_row_index": 104,
+          "id": "0x3f01",
+          "delivery_person_ratings": 3.8
+        },
+        {
+          "source_row_index": 279,
+          "id": "0xa053",
+          "delivery_person_ratings": 3.8
+        },
+        {
+          "source_row_index": 357,
+          "id": "0x7725",
+          "delivery_person_ratings": 3.7
+        },
+        {
+          "source_row_index": 359,
+          "id": "0x6edb",
+          "delivery_person_ratings": 3.8
+        }
+      ]
+    },
+    "delivery_person_age": {
+      "valid_count": 43730,
+      "q1": 25.0,
+      "q3": 35.0,
+      "lower_fence": 10.0,
+      "upper_fence": 50.0,
+      "outlier_count": 0,
+      "outlier_percent": 0.0,
+      "examples": []
+    },
+    "multiple_deliveries": {
+      "valid_count": 44591,
+      "q1": 0.0,
+      "q3": 1.0,
+      "lower_fence": -1.5,
+      "upper_fence": 2.5,
+      "outlier_count": 361,
+      "outlier_percent": 0.8095804086026328,
+      "examples": [
+        {
+          "source_row_index": 0,
+          "id": "0xcdcd",
+          "multiple_deliveries": 3.0
+        },
+        {
+          "source_row_index": 34,
+          "id": "0xb796",
+          "multiple_deliveries": 3.0
+        },
+        {
+          "source_row_index": 150,
+          "id": "0x87e4",
+          "multiple_deliveries": 3.0
+        },
+        {
+          "source_row_index": 156,
+          "id": "0x5631",
+          "multiple_deliveries": 3.0
+        },
+        {
+          "source_row_index": 173,
+          "id": "0x290c",
+          "multiple_deliveries": 3.0
+        }
+      ]
+    }
+  },
+  "tentative_rating_range": {
+    "range": [
+      1,
+      5
+    ],
+    "flagged_count": 53,
+    "note": "Tentative only; confirm the rating scale with authoritative dataset documentation."
+  },
+  "category_normalization": {
+    "known_label_case_or_whitespace_changes": {
+      "weather_conditions": 0,
+      "road_traffic_density": 0,
+      "type_of_order": 0,
+      "type_of_vehicle": 0,
+      "festival": 0,
+      "city": 0
+    },
+    "policy": "Trim whitespace and case-normalize only labels matching the observed canonical vocabulary; preserve other labels."
+  },
+  "field_descriptions": {
+    "id": "Order identifier; not a predictive feature.",
+    "delivery_person_id": "Delivery-person identifier; definition/source is undocumented.",
+    "delivery_person_age": "Recorded delivery-person age; unit presumed years.",
+    "delivery_person_ratings": "Recorded delivery-person rating; a 1–5 range is tentative and requires source confirmation.",
+    "restaurant_latitude": "Restaurant latitude in decimal degrees.",
+    "restaurant_longitude": "Restaurant longitude in decimal degrees.",
+    "delivery_location_latitude": "Delivery destination latitude in decimal degrees.",
+    "delivery_location_longitude": "Delivery destination longitude in decimal degrees.",
+    "order_date": "Order date as supplied; source format is day-month-year.",
+    "time_orderd": "Order time as supplied; source column spelling is retained.",
+    "time_order_picked": "Pickup time as supplied; no pickup date or timezone is present.",
+    "weather_conditions": "Weather category; collection method and location specificity are undocumented.",
+    "road_traffic_density": "Traffic category; measurement method and route specificity are undocumented.",
+    "vehicle_condition": "Recorded integer condition code; code meanings are undocumented.",
+    "type_of_order": "Order/food category.",
+    "type_of_vehicle": "Vehicle category.",
+    "multiple_deliveries": "Numeric delivery/batching field; exact count semantics require confirmation.",
+    "festival": "Festival indicator/category; event definition is undocumented.",
+    "city": "Broad area/city-type label, not a reliable city name.",
+    "time_taken_min": "Recorded delivery duration in minutes; target in Week 1 modeling."
+  },
+  "scaling": "No scaling applied by default; optional scaler learns statistics from training data only.",
+  "paths": {
+    "input": "C:\\Users\\Kailash\\Desktop\\Documents\\logistics-route-optimization\\data\\Zomato Dataset.csv",
+    "processed_csv": "C:\\Users\\Kailash\\Desktop\\Documents\\logistics-route-optimization\\data\\week2_cleaned_logistics_data.csv",
+    "audit_json": "C:\\Users\\Kailash\\Desktop\\Documents\\logistics-route-optimization\\reports\\week2_data_quality_summary.json"
+  },
+  "row_retention": {
+    "source_rows": 45584,
+    "output_rows": 45584,
+    "rows_removed": 0,
+    "policy": "No rows removed; malformed values, duplicates, coordinate concerns, and outliers are retained and flagged."
+  }
+}
