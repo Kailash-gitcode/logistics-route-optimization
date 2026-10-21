@@ -1,0 +1,235 @@
+{
+  "shape": [
+    1000,
+    12
+  ],
+  "missing": {
+    "shipment_id": 0,
+    "order_date": 0,
+    "origin_zone": 0,
+    "destination_zone": 0,
+    "distance_km": 0,
+    "weight_kg": 0,
+    "traffic_condition": 0,
+    "vehicle_type": 0,
+    "delivery_time_min": 0,
+    "transportation_cost": 0,
+    "shipment_status": 0,
+    "delayed": 0
+  },
+  "duplicates": 0,
+  "stats": {
+    "distance_km": {
+      "count": 1000.0,
+      "mean": 11.949,
+      "std": 7.434,
+      "min": 1.13,
+      "25%": 6.557,
+      "50%": 10.165,
+      "75%": 15.395,
+      "max": 55.0
+    },
+    "weight_kg": {
+      "count": 1000.0,
+      "mean": 12.016,
+      "std": 9.678,
+      "min": 0.75,
+      "25%": 5.515,
+      "50%": 9.54,
+      "75%": 15.25,
+      "max": 96.47
+    },
+    "delivery_time_min": {
+      "count": 1000.0,
+      "mean": 44.914,
+      "std": 19.091,
+      "min": 8.0,
+      "25%": 31.2,
+      "50%": 43.05,
+      "75%": 56.175,
+      "max": 129.1
+    },
+    "transportation_cost": {
+      "count": 1000.0,
+      "mean": 315.97,
+      "std": 194.384,
+      "min": 45.0,
+      "25%": 182.222,
+      "50%": 270.165,
+      "75%": 407.407,
+      "max": 1513.33
+    }
+  },
+  "correlations": {
+    "distance_km": {
+      "distance_km": 1.0,
+      "weight_kg": 0.045,
+      "delivery_time_min": 0.757,
+      "transportation_cost": 0.847
+    },
+    "weight_kg": {
+      "distance_km": 0.045,
+      "weight_kg": 1.0,
+      "delivery_time_min": 0.055,
+      "transportation_cost": 0.066
+    },
+    "delivery_time_min": {
+      "distance_km": 0.757,
+      "weight_kg": 0.055,
+      "delivery_time_min": 1.0,
+      "transportation_cost": 0.713
+    },
+    "transportation_cost": {
+      "distance_km": 0.847,
+      "weight_kg": 0.066,
+      "delivery_time_min": 0.713,
+      "transportation_cost": 1.0
+    }
+  },
+  "groups": {
+    "traffic_condition": {
+      "High": {
+        "shipment_count": 287,
+        "mean_delivery_time_min": 50.449,
+        "median_delivery_time_min": 48.4,
+        "mean_transportation_cost": 307.411,
+        "delay_rate": 0.3
+      },
+      "Low": {
+        "shipment_count": 239,
+        "mean_delivery_time_min": 37.256,
+        "median_delivery_time_min": 32.1,
+        "mean_transportation_cost": 334.861,
+        "delay_rate": 0.146
+      },
+      "Moderate": {
+        "shipment_count": 382,
+        "mean_delivery_time_min": 41.196,
+        "median_delivery_time_min": 38.85,
+        "mean_transportation_cost": 312.87,
+        "delay_rate": 0.173
+      },
+      "Severe": {
+        "shipment_count": 92,
+        "mean_delivery_time_min": 62.978,
+        "median_delivery_time_min": 59.1,
+        "mean_transportation_cost": 306.469,
+        "delay_rate": 0.522
+      }
+    },
+    "vehicle_type": {
+      "Motorcycle": {
+        "shipment_count": 504,
+        "mean_delivery_time_min": 42.396,
+        "median_delivery_time_min": 40.15,
+        "mean_transportation_cost": 265.91,
+        "delay_rate": 0.238
+      },
+      "Truck": {
+        "shipment_count": 139,
+        "mean_delivery_time_min": 50.299,
+        "median_delivery_time_min": 49.3,
+        "mean_transportation_cost": 444.467,
+        "delay_rate": 0.237
+      },
+      "Van": {
+        "shipment_count": 357,
+        "mean_delivery_time_min": 46.371,
+        "median_delivery_time_min": 45.7,
+        "mean_transportation_cost": 336.613,
+        "delay_rate": 0.23
+      }
+    },
+    "shipment_status": {
+      "Delayed": {
+        "shipment_count": 235,
+        "mean_delivery_time_min": 52.055,
+        "median_delivery_time_min": 52.1,
+        "mean_transportation_cost": 349.611,
+        "delay_rate": 1.0
+      },
+      "On time": {
+        "shipment_count": 765,
+        "mean_delivery_time_min": 42.72,
+        "median_delivery_time_min": 41.2,
+        "mean_transportation_cost": 305.636,
+        "delay_rate": 0.0
+      }
+    }
+  },
+  "monthly": {
+    "2025-01": {
+      "shipments": 87,
+      "mean_delivery_time_min": 46.463,
+      "mean_transportation_cost": 337.728,
+      "delay_rate": 0.287
+    },
+    "2025-02": {
+      "shipments": 90,
+      "mean_delivery_time_min": 48.15,
+      "mean_transportation_cost": 324.849,
+      "delay_rate": 0.244
+    },
+    "2025-03": {
+      "shipments": 79,
+      "mean_delivery_time_min": 42.757,
+      "mean_transportation_cost": 285.877,
+      "delay_rate": 0.19
+    },
+    "2025-04": {
+      "shipments": 75,
+      "mean_delivery_time_min": 43.564,
+      "mean_transportation_cost": 302.81,
+      "delay_rate": 0.253
+    },
+    "2025-05": {
+      "shipments": 93,
+      "mean_delivery_time_min": 44.976,
+      "mean_transportation_cost": 336.145,
+      "delay_rate": 0.237
+    },
+    "2025-06": {
+      "shipments": 69,
+      "mean_delivery_time_min": 42.283,
+      "mean_transportation_cost": 302.664,
+      "delay_rate": 0.275
+    },
+    "2025-07": {
+      "shipments": 76,
+      "mean_delivery_time_min": 42.932,
+      "mean_transportation_cost": 323.32,
+      "delay_rate": 0.184
+    },
+    "2025-08": {
+      "shipments": 67,
+      "mean_delivery_time_min": 43.245,
+      "mean_transportation_cost": 292.059,
+      "delay_rate": 0.119
+    },
+    "2025-09": {
+      "shipments": 110,
+      "mean_delivery_time_min": 45.895,
+      "mean_transportation_cost": 314.227,
+      "delay_rate": 0.2
+    },
+    "2025-10": {
+      "shipments": 91,
+      "mean_delivery_time_min": 46.912,
+      "mean_transportation_cost": 354.612,
+      "delay_rate": 0.22
+    },
+    "2025-11": {
+      "shipments": 89,
+      "mean_delivery_time_min": 43.198,
+      "mean_transportation_cost": 292.408,
+      "delay_rate": 0.281
+    },
+    "2025-12": {
+      "shipments": 74,
+      "mean_delivery_time_min": 46.897,
+      "mean_transportation_cost": 309.623,
+      "delay_rate": 0.324
+    }
+  },
+  "delay_rate": 0.235
+}

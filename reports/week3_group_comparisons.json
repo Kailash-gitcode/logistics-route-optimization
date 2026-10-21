@@ -1,0 +1,71 @@
+{
+  "traffic_condition": {
+    "High": {
+      "shipment_count": 287,
+      "mean_delivery_time_min": 50.449,
+      "median_delivery_time_min": 48.4,
+      "mean_transportation_cost": 307.411,
+      "delay_rate": 0.3
+    },
+    "Low": {
+      "shipment_count": 239,
+      "mean_delivery_time_min": 37.256,
+      "median_delivery_time_min": 32.1,
+      "mean_transportation_cost": 334.861,
+      "delay_rate": 0.146
+    },
+    "Moderate": {
+      "shipment_count": 382,
+      "mean_delivery_time_min": 41.196,
+      "median_delivery_time_min": 38.85,
+      "mean_transportation_cost": 312.87,
+      "delay_rate": 0.173
+    },
+    "Severe": {
+      "shipment_count": 92,
+      "mean_delivery_time_min": 62.978,
+      "median_delivery_time_min": 59.1,
+      "mean_transportation_cost": 306.469,
+      "delay_rate": 0.522
+    }
+  },
+  "vehicle_type": {
+    "Motorcycle": {
+      "shipment_count": 504,
+      "mean_delivery_time_min": 42.396,
+      "median_delivery_time_min": 40.15,
+      "mean_transportation_cost": 265.91,
+      "delay_rate": 0.238
+    },
+    "Truck": {
+      "shipment_count": 139,
+      "mean_delivery_time_min": 50.299,
+      "median_delivery_time_min": 49.3,
+      "mean_transportation_cost": 444.467,
+      "delay_rate": 0.237
+    },
+    "Van": {
+      "shipment_count": 357,
+      "mean_delivery_time_min": 46.371,
+      "median_delivery_time_min": 45.7,
+      "mean_transportation_cost": 336.613,
+      "delay_rate": 0.23
+    }
+  },
+  "shipment_status": {
+    "Delayed": {
+      "shipment_count": 235,
+      "mean_delivery_time_min": 52.055,
+      "median_delivery_time_min": 52.1,
+      "mean_transportation_cost": 349.611,
+      "delay_rate": 1.0
+    },
+    "On time": {
+      "shipment_count": 765,
+      "mean_delivery_time_min": 42.72,
+      "median_delivery_time_min": 41.2,
+      "mean_transportation_cost": 305.636,
+      "delay_rate": 0.0
+    }
+  }
+}

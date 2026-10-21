@@ -1,0 +1,47 @@
+{
+  "shape": [
+    1000,
+    12
+  ],
+  "dtypes": {
+    "shipment_id": "str",
+    "order_date": "datetime64[us]",
+    "origin_zone": "str",
+    "destination_zone": "str",
+    "distance_km": "float64",
+    "weight_kg": "float64",
+    "traffic_condition": "str",
+    "vehicle_type": "str",
+    "delivery_time_min": "float64",
+    "transportation_cost": "float64",
+    "shipment_status": "str",
+    "delayed": "bool"
+  },
+  "missing_values": {
+    "shipment_id": 0,
+    "order_date": 0,
+    "origin_zone": 0,
+    "destination_zone": 0,
+    "distance_km": 0,
+    "weight_kg": 0,
+    "traffic_condition": 0,
+    "vehicle_type": 0,
+    "delivery_time_min": 0,
+    "transportation_cost": 0,
+    "shipment_status": 0,
+    "delayed": 0
+  },
+  "duplicate_rows": 0,
+  "duplicate_shipment_ids": 0,
+  "seed": 20261021,
+  "synthetic": true,
+  "assumptions": {
+    "records": 1000,
+    "period": "2025 calendar year",
+    "distance_km": "clipped gamma-like urban distance, 1\u201355",
+    "weight_kg": "clipped lognormal, 0.3\u2013180",
+    "delivery_time": "distance, vehicle speed, traffic, weight and random variation",
+    "cost": "distance and vehicle base rate plus weight and random variation",
+    "delay": "probabilistic indicator informed by traffic and simulated duration"
+  }
+}

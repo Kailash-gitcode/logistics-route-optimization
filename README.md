@@ -197,3 +197,17 @@ Then open the notebooks in order. The modeling and clustering scripts use scikit
 - Evaluate predictive models on later time periods and compare against operational baselines before considering deployment.
 - Extend the educational assignment model to include route sequencing, driver assignment, batching, delivery windows, fleet constraints, and route-cost minimization only after the necessary real-world data is available.
 - Add a sourced background/literature review and compile the final internship report once the project analysis is complete.
+
+
+## Week 3: Advanced Data Analysis and Visualization
+
+Week 3 uses a **hypothetical synthetic** dataset of 1,000 reproducibly generated shipments; it is not company data. The analysis explores distributions, correlations, group comparisons, and simulated monthly trends.
+
+- Dataset: [`data/week3_hypothetical_logistics.csv`](data/week3_hypothetical_logistics.csv)
+- Analysis script: [`src/week3_logistics_eda.py`](src/week3_logistics_eda.py)
+- Notebook: [`notebooks/06_week3_advanced_logistics_eda.ipynb`](notebooks/06_week3_advanced_logistics_eda.ipynb)
+- Report: [`reports/week3_advanced_data_analysis_visualization_logistics.docx`](reports/week3_advanced_data_analysis_visualization_logistics.docx)
+- Visualizations: [`visualizations/`](visualizations/) (`week3_*.png`)
+- Machine-readable results: `reports/week3_*.csv` and `reports/week3_*.json`
+
+Run from the project root with `python src/week3_logistics_eda.py`. Matplotlib is used when installed; this environment used the Pillow chart fallback.
