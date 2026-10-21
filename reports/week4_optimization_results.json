@@ -1,0 +1,14 @@
+{
+  "objective": "maximize long-duration test records surfaced to limited review capacity",
+  "review_capacity_fraction": 0.2,
+  "review_slots": 1889,
+  "long_duration_threshold_min_train_q75": 32.0,
+  "test_long_duration_count": 2640,
+  "model_alerted_long_count": 1589,
+  "random_alerted_long_count": 549,
+  "model_precision": 0.8411858125992588,
+  "random_precision": 0.29062996294335625,
+  "model_recall": 0.6018939393939394,
+  "random_recall": 0.20795454545454545,
+  "interpretation": "Triage only. Alerts do not change delivery outcomes; this is a test-set resource-allocation simulation, not measured time savings."
+}

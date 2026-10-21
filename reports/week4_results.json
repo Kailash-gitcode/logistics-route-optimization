@@ -1,0 +1,86 @@
+{
+  "dataset": {
+    "path": "data/cleaned_logistics_data.csv",
+    "source_note": "Existing cleaned dataset; provenance caveat in data/DATASET_SOURCE.md",
+    "rows_used": 45584,
+    "date_min": "2022-02-11",
+    "date_max": "2022-04-06",
+    "distinct_dates": 44,
+    "missing_target_removed": 0
+  },
+  "problem": {
+    "target": "time_taken_min",
+    "features": [
+      "approx_delivery_distance_km",
+      "vehicle_condition",
+      "multiple_deliveries",
+      "order_hour",
+      "order_day",
+      "delivery_person_age",
+      "road_traffic_density",
+      "weather_conditions",
+      "type_of_vehicle",
+      "city",
+      "festival",
+      "day_of_week"
+    ],
+    "excluded": "IDs, coordinates, raw timestamps, post-outcome ratings, pickup times and any target-derived fields"
+  },
+  "split": {
+    "type": "chronological",
+    "cutoff_exclusive_train": "2022-03-29",
+    "train_rows": 36138,
+    "test_rows": 9446,
+    "seed": 42
+  },
+  "implementation": "NumPy fallback (scikit-learn unavailable)",
+  "training_rows_by_model": {
+    "Linear Regression": 36138,
+    "Decision Tree (depth 8)": 15000,
+    "Random Forest (12 trees)": 15000,
+    "Random Forest (20 trees)": 15000
+  },
+  "cv_mean_rmse": {
+    "Random Forest (20 trees)": 5.705243067810858,
+    "Random Forest (12 trees)": 6.053009132170213,
+    "Linear Regression": 6.452137932103444,
+    "Decision Tree (depth 8)": 7.150301555651247
+  },
+  "selected_model": "Random Forest (20 trees)",
+  "test_metrics": {
+    "Linear Regression": {
+      "MAE": 5.170552245094042,
+      "RMSE": 6.500682298503219,
+      "R2": 0.530635821162756
+    },
+    "Decision Tree (depth 8)": {
+      "MAE": 5.851563021231544,
+      "RMSE": 7.435430289096208,
+      "R2": 0.38594924325929536
+    },
+    "Random Forest (12 trees)": {
+      "MAE": 4.581939184848555,
+      "RMSE": 5.789746647760801,
+      "R2": 0.6276844473237548
+    },
+    "Random Forest (20 trees)": {
+      "MAE": 4.18185774542679,
+      "RMSE": 5.2939137023420395,
+      "R2": 0.6887239022861975
+    }
+  },
+  "optimization": {
+    "objective": "maximize long-duration test records surfaced to limited review capacity",
+    "review_capacity_fraction": 0.2,
+    "review_slots": 1889,
+    "long_duration_threshold_min_train_q75": 32.0,
+    "test_long_duration_count": 2640,
+    "model_alerted_long_count": 1589,
+    "random_alerted_long_count": 549,
+    "model_precision": 0.8411858125992588,
+    "random_precision": 0.29062996294335625,
+    "model_recall": 0.6018939393939394,
+    "random_recall": 0.20795454545454545,
+    "interpretation": "Triage only. Alerts do not change delivery outcomes; this is a test-set resource-allocation simulation, not measured time savings."
+  }
+}

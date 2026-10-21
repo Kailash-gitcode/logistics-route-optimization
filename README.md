@@ -211,3 +211,15 @@ Week 3 uses a **hypothetical synthetic** dataset of 1,000 reproducibly generated
 - Machine-readable results: `reports/week3_*.csv` and `reports/week3_*.json`
 
 Run from the project root with `python src/week3_logistics_eda.py`. Matplotlib is used when installed; this environment used the Pillow chart fallback.
+
+## Week 4: Predictive Modeling and Optimization
+
+Week 4 reuses `data/cleaned_logistics_data.csv` to predict `time_taken_min` with a chronological holdout and temporal cross-validation. It also demonstrates capacity-constrained exception triage using predicted durations. The triage result is simulated prioritization, not a measured reduction in delivery time. The dataset provenance caveat in [`data/DATASET_SOURCE.md`](data/DATASET_SOURCE.md) still applies.
+
+- Modeling script: [`src/week4_predictive_modeling.py`](src/week4_predictive_modeling.py)
+- Notebook: [`notebooks/07_week4_predictive_modeling_optimization.ipynb`](notebooks/07_week4_predictive_modeling_optimization.ipynb)
+- Report: [`reports/week4_predictive_modeling_optimization_logistics.docx`](reports/week4_predictive_modeling_optimization_logistics.docx)
+- Metrics and optimization results: `reports/week4_*.csv` and `reports/week4_*.json`
+- Charts: `visualizations/week4_*.png`
+
+Reproduce from the project root with `python src/week4_predictive_modeling.py`. Scikit-learn is used when installed; otherwise the script uses the documented NumPy fallback.
